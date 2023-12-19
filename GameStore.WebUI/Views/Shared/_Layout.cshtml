@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+    <style>
+        .navbar-right {
+            float: right !important;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" href="#">
+            <span class="hidden-xs">GameStore - магазин комп'ютерних ігор</span>
+            <div class="visible-xs">Game</div>
+            <div class="visible-xs">Store</div>
+        </a>
+        @Html.Action("Summary", "Cart")
+        <style>
+            .login-button {
+                background-color: #ffffff; /* Білий фон */
+                color: #333; /* Колір тексту */
+                border: 1px solid #ccc; /* Обрамлення кнопки */
+                border-radius: 5px; /* Закруглені кути */
+                float: right; /* Вирівнювання справа */
+                margin-top: 8px; /* Зсув вниз на 2 пікселі */
+                transition: background-color 0.3s; /* Плавне змінення кольору фону при наведенні */
+                width: 70px; /* Ширина кнопки */
+                height: 35px; /* Висота кнопки */
+                line-height: 35px; /* Центрування тексту по вертикалі */
+                text-align: center; /* Центрування тексту по горизонталі */
+            }
+
+                .login-button:hover {
+                    background-color: #f0f0f0; /* Змінюємо фон при наведенні */
+                }
+        </style>
+
+        <a href="https://localhost:44387/UserAccount/Login" class="login-button">Вхід</a>
+
+        <style>
+            .login-button {
+                background-color: #ffffff; /* Білий фон */
+                color: #333; /* Колір тексту */
+                border: 1px solid #ccc; /* Обрамлення кнопки */
+                border-radius: 5px; /* Закруглені кути */
+                float: right; /* Вирівнювання справа */
+                margin-top: 8px; /* Зсув вниз на 2 пікселі */
+                margin-left: 2px; /* Зсув вліво на 2 пікселі */
+                transition: background-color 0.3s; /* Плавне змінення кольору фону при наведенні */
+                width: 80px; /* Ширина кнопки */
+                height: 35px; /* Висота кнопки */
+                line-height: 35px; /* Центрування тексту по вертикалі */
+                text-align: center; /* Центрування тексту по горизонталі */
+            }
+
+                .login-button:hover {
+                    background-color: #f0f0f0; /* Змінюємо фон при наведенні */
+                }
+        </style>
+
+        <a href="https://localhost:44387/UserAccount/Register" class="login-button">Реєстрація</a>
+
+    </div>
+
+    <div class="visible-xs">
+        @Html.Action("Menu", "Nav", new { horizontalNav = true })
+    </div>
+
+    <div class="row panel">
+        <div id="categories" class="col-sm-3 hidden-xs">
+            @Html.Action("Menu", "Nav")
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
